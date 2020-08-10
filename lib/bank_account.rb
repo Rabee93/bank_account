@@ -11,6 +11,7 @@ end
 
 
 def withdraw(m)
+  raise 'exceeded balance' if m > @balance 
   @balance -= m
 end
 end

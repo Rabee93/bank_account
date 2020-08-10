@@ -15,5 +15,10 @@ describe '#withdraw' do
     account.deposit(1000)
   expect { account.withdraw(500) }.to change { account.balance }.by(-500)
   end
+  it 'raises an error if the withdraw amount exceeds the balance' do
+    account.deposit(1000)
+    expect { account.withdraw(1001) }.to raise_error 'exceeded balance'
+  end
+
 end
 end
