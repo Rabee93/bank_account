@@ -7,15 +7,13 @@ describe BankAccount do
     end
   describe '#deposit' do
     it 'adds money to the balance'do
-    account.deposit(1000)
-    expect(account.balance).to eq(1000)
+    expect { account.deposit(500) }.to change { account.balance }.by(500)
   end
 end
 describe '#withdraw' do
   it 'withdraws money from the balance' do
     account.deposit(1000)
-    account.withdraw(500)
-    expect(account.balance).to eq(500)
+  expect { account.withdraw(500) }.to change { account.balance }.by(-500)
   end
-end 
+end
 end
