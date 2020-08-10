@@ -3,4 +3,9 @@ class BankAccount
   def initialize
     @balance = 0
   end
+
+
+def deposit(m)
+  @balance += m
 end
+end 
