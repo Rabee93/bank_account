@@ -6,17 +6,22 @@ class BankAccount
     @array = []
   end
 
-
-def deposit(m)
-  @balance += m
-  @array << [Date.today.strftime('%d/%m/%Y'),'%.2f'% m, nil ,'%.2f'% @balance]
+def statment_lines(credit,debit)
+  @array << [Date.today.strftime('%d/%m/%Y'), credit, debit ,'%.2f'% @balance]
 end
 
 
-def withdraw(c)
-  raise 'exceeded balance' if c > @balance
-  @balance -= c
-  @array << [Date.today.strftime('%d/%m/%Y'), nil,'%.2f'% c,'%.2f'% @balance]
+def deposit(credit)
+  @balance += credit
+  statment_lines('%.2f'% credit,nil)
+
+end
+
+
+def withdraw(debit)
+  raise 'exceeded balance' if debit > @balance
+  @balance -= debit
+  statment_lines(nil,'%.2f'% debit)
 
 end
 
