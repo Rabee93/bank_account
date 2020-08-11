@@ -1,7 +1,11 @@
 
 # Bank_account_tech_test.
 ------------
-
+### How to install.
+- clone the project
+- make sure you have ruby 2.7.0 installed
+- `cd` to `bank_tech_test`
+- run `bundle install`
 ### Acceptance criteria
 Given a client makes a deposit of 1000 on 10-01-2012
 And a deposit of 2000 on 13-01-2012
