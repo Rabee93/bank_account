@@ -6,10 +6,6 @@ class BankAccount
     @array = []
   end
 
-def statment_lines(credit,debit)
-  @array << [Date.today.strftime('%d/%m/%Y'), credit, debit ,'%.2f'% @balance]
-end
-
 
 def deposit(credit)
   @balance += credit
@@ -33,5 +29,10 @@ def show_statment
 end
 lines.join("\n")
 
+end
+
+private
+def add_transaction (credit,debit)
+  @array << [Date.today.strftime('%d/%m/%Y'), credit, debit ,'%.2f'% @balance]
 end
 end
