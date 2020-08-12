@@ -4,8 +4,9 @@
 ### How to install.
 - clone the project
 - make sure you have ruby 2.7.0 installed
-- `cd` to `bank_tech_test`
+- open the terminal and type `cd` to `bank_tech_test`
 - run `bundle install`
+
 ### Acceptance criteria
 Given a client makes a deposit of 1000 on 10-01-2012
 And a deposit of 2000 on 13-01-2012
@@ -19,7 +20,8 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 
 ### Usage example
-```$ irb
+```
+$ irb
 2.7.0 :001 > require './lib/bank_account'
  => true
 2.7.0 :002 > account = BankAccount.new
@@ -36,7 +38,7 @@ date || credit || debit || balance
 
 
 ###Test.
-to run the test: type rspec in the terminal
 
+To run the test: type rspec in the terminal
 you will see the test coverage at the end of the rspec output
 ----
