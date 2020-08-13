@@ -37,7 +37,7 @@ date || credit || debit || balance
  ```
 
 
-###Test.
+### Test.
 
 To run the test: type rspec in the terminal
 you will see the test coverage at the end of the rspec output
