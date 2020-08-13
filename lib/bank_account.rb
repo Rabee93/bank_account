@@ -6,7 +6,7 @@ class BankAccount
   attr_reader :balance
   def initialize
     @balance = 0
-    @array = []
+    @transactions = []
   end
 
   def deposit(credit)
@@ -21,9 +21,9 @@ class BankAccount
     add_transaction(nil, format('%.2f', debit))
   end
 
-  def show_statment
+  def show_statement
     lines = ['date || credit || debit || balance']
-    @array.reverse.each do |n|
+    @transactions.reverse.each do |n|
       lines << n.join(' || ').gsub!('  ', ' ')
     end
     lines.join("\n")
@@ -32,7 +32,7 @@ class BankAccount
   private
 
   def add_transaction(credit, debit)
-    @array << [Date.today.strftime('%d/%m/%Y'), credit, debit,
+    @transactions << [Date.today.strftime('%d/%m/%Y'), credit, debit,
                format('%.2f', @balance)]
   end
 end
