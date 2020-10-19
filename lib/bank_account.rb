@@ -3,7 +3,7 @@
 require 'Date'
 # this class shows what a simple bank account application might look like.
 class BankAccount
-  attr_reader :balance
+  attr_reader :balance, :transactions
   def initialize
     @balance = 0
     @transactions = []
@@ -19,14 +19,6 @@ class BankAccount
 
     @balance -= debit
     add_transaction(nil, format('%.2f', debit))
-  end
-
-  def show_statement
-    lines = ['date || credit || debit || balance']
-    @transactions.reverse.each do |n|
-      lines << n.join(' || ').gsub!('  ', ' ')
-    end
-    lines.join("\n")
   end
 
   private
