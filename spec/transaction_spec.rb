@@ -18,9 +18,9 @@ describe Transaction do
   it 'throws an error if it receives a debit and credit transaction' do
     expect { Transaction.new(7,6,3) }.to raise_error(
       'a credit or debit can not be present at the same time')
-    end
-    it 'throws an error if it does not receive a debit and credit transaction' do
-      expect { Transaction.new(nil,nil,3) }.to raise_error(
-        'a credit or debit is required')
-      end
-    end
+  end
+  it 'throws an error if it does not receive a debit and credit transaction' do
+    expect { Transaction.new(nil,nil,3) }.to raise_error(
+      'a credit or debit is required')
+  end
+end

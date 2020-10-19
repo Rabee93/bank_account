@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'Transaction'
+require 'transaction'
 require 'Date'
 # this class shows what a simple bank account application might look like.
 class BankAccount
