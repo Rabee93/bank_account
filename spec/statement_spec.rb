@@ -2,16 +2,16 @@ require 'statement'
 
 
 describe Statement do
-  let(:account) { BankAccount.new }
   let(:statement) { Statement.new }
   describe '#show_statement' do
     it ' shows the date, deposit, withdraw and balance' do
-      allow(Date).to receive(:today) { Date.new(2020, 8, 10) }
-      account.deposit(1000)
-      account.deposit(2000)
-      account.withdraw(500)
+      transactions = [
+        double('transaction1', :date => Date.new(2020, 8, 10), :credit=>1000, :debit=>nil, :balance=>1000),
+        double('transaction2', :date => Date.new(2020, 8, 10), :credit=>2000, :debit=>nil, :balance=>3000),
+        double('transaction3', :date => Date.new(2020, 8, 10), :credit=>nil, :debit=>500, :balance=>2500),
+      ]
 
-      expect(statement.show_statement(account.transactions)).to eq(
+      expect(statement.show_statement(transactions)).to eq(
         "date || credit || debit || balance\n" +
         + "10/08/2020 || || 500.00 || 2500.00\n" +
         + "10/08/2020 || 2000.00 || || 3000.00\n" +

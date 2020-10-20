@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-require 'transaction'
 require 'Date'
+require 'transaction'
 # this class shows what a simple bank account application might look like.
 class BankAccount
   attr_reader :balance, :transactions
